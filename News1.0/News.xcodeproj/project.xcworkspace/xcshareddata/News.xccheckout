@@ -46,7 +46,11 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A156487ED72E1DBBEECCBDB2AD5DA208515FD28C</string>
 			<key>IDESourceControlWCCName</key>
+<<<<<<< HEAD
 			<string>NEWSS</string>
+=======
+			<string>NEWSSSS</string>
+>>>>>>> 5b4eff66e64a2ce9851b7ceae2e2785abf2a5f8f
 		</dict>
 	</array>
 </dict>
