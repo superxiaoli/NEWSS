@@ -14,8 +14,18 @@
 #import "HeadLine.h"
 #import "HeadLineImage.h"
 #import "NewsViewController.h"
- 
-
+ // 情感头文件引用
+#import "QGheaderModel.h"
+#import "QGdata.h"
+#import "QGTableViewCell.h"
+#import "QGTwoTableViewCell.h"
+#import "QGTwoViewController.h"
+#import "QGWebView.h"
+#import "QGViewController.h"
+#import "QGTwoView.h"
+#import "QGTwoData.h"
+#import "QGTwoModel.h"
+#import "QGTableViewController.h"
 
 
 

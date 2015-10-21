@@ -9,4 +9,5 @@
 #ifndef Project_URLHeader_h
 #define Project_URLHeader_h
 
+#define changeUrl @"http://c.3g.163.com/photo/api/set/0026/87670.json"
 #endif

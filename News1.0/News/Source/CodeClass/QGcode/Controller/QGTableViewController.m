@@ -7,7 +7,7 @@
 //
 
 #import "QGTableViewController.h"
-
+#import "MJRefresh.h"
 @interface QGTableViewController ()
 {
     NSInteger integer;
