@@ -24,6 +24,7 @@
 
 @property (nonatomic,strong)HeadLineTableViewController *head ;
 @property (nonatomic,strong)PETableViewController *pe;
+@property(nonatomic,strong)QGTableViewController * qg;
 
 
 @end
@@ -40,7 +41,7 @@
     
     self.titleBar = [[LGtitleBarView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
     //self.titleBar.backgroundColor = [UIColor blackColor];
-    self.titles = @[@"今日头条", @"体育", @"科技", @"财经", @"娱乐", @"八卦", @"娱乐", @"八卦"];
+    self.titles = @[@"今日头条", @"体育", @"科技", @"财经", @"娱乐", @"八卦", @"娱乐", @"情感"];
     
     self.titleBar.titles = _titles;
     self.titleBar.delegate = self;
@@ -70,6 +71,11 @@
     self.pe.view.frame = CGRectMake(CGRectGetMaxX(self.view.frame), 0, self.view.frame.size.width, self.view.frame.size.height);
     [self addChildViewController:_pe];
     [self.BackView addSubview:_pe.tableView];
+    
+    self.qg = [[QGTableViewController alloc]init];
+    self.qg.view.frame = CGRectMake(CGRectGetMaxX(self.view.frame)*7, 0, self.view.frame.size.width, self.view.frame.size.height-155);
+    [self addChildViewController:self.qg];
+    [self.BackView addSubview:self.qg.view];
 }
 
 -(void)LGtitleBarView:(LGtitleBarView *)titleBarView didSelectedItem:(int)index
