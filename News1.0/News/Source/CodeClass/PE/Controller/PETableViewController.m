@@ -58,7 +58,7 @@
 -(void)getData
 {
     [[GetPeData sharePeHandleData] getDataWithUrl:[NSString stringWithFormat:  @"http://c.3g.163.com/nc/article/list/T1348649079062/%ld-20.html",self.aindex ]PeValue:^(NSArray *arr1, NSArray *arr2,NSArray *arr3) {
-        if (self.aindex == 20)
+        if (self.aindex == 140)
         {
             self.arr1 = [NSMutableArray arrayWithArray:arr1];
         }
@@ -99,11 +99,11 @@
 }
 - (void)headerRereshing
 {
-    self.aindex = 20;
+    self.aindex = 140;
     // 请求数据
     [self getData];
     
-    
+    [self.tableView footerEndRefreshing];
     
     
 }
