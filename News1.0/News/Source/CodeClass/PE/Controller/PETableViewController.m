@@ -165,7 +165,7 @@
     [self.timer invalidate];
     
 }
-// 停止移动scrollview时候,让定时器开始
+// 停止移动scrollview时候,让定时器开始######
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self setupTimer];
