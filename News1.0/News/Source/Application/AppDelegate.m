@@ -10,7 +10,7 @@
 #import "RootTabBarController.h"
 #import "NewsViewController.h"
 
-/////////////
+/////////////*************
 
 
 @interface AppDelegate ()
