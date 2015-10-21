@@ -17,15 +17,17 @@
 #import "MJRefresh.h"
 #import "HeadPicshowController.h"
 #import "HeadLinePicViewController.h"
+#import "MJRefresh.h"
 
 #define KimageCount self.view.frame.size.width
 @interface HeadLineTableViewController ()<UIScrollViewDelegate>
-@property (nonatomic,strong)NSArray *array;
+@property (nonatomic,strong)NSMutableArray *array;
 @property (nonatomic,strong)NSArray *array1;
 @property (nonatomic,strong)NSArray *array2;
 @property (nonatomic,strong)NSArray *arr;
 @property (nonatomic,strong)NSTimer *timer;
 @property (nonatomic,strong)UIImageView *image1;
+@property (nonatomic,assign)NSInteger aIndex;
 
 
 
@@ -46,27 +48,13 @@
     
     
     
-    self.array = [NSArray array];
+    
   
     self.arr = [NSArray array];
     
     self.array1 = [NSArray array];
     self.array2 = [NSArray array];
     
-    
-    [[GetHendLineData shareHandLineData] getDataWithUrl:KHeadLineURL PassValue:^(NSArray *array) {
-        
-        self.array = array;
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-           [self.tableView reloadData];
-        });
-        
-        
-        
-    }];
     
     
     
@@ -86,12 +74,76 @@
   [self setUpUI];
     
     
-    //[self.tableView addHeaderWithTarget:self action:@selector(aAction)];
+  [self getDataHead];
+    [self setupReFresh];
+    
+    
+}
+-(void)getDataHead
+{
+    
+    [[GetHendLineData shareHandLineData] getDataWithUrl:[NSString stringWithFormat:@"http://c.3g.163.com/nc/article/headline/T1348647909107/%ld-140.html",self.aIndex ] PassValue:^(NSArray *array) {
+        
+        self.array = [NSMutableArray arrayWithArray:array];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+        });
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+    }];
+
+}
+
+-(void)setupReFresh
+{
+    //下拉刷新
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
+    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    //一些设置
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.tableView.headerRefreshingText = @"刷新中。。。";
+    
+    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.tableView.footerRefreshingText = @"加载中。。。";
+
+}
+//下拉刷新
+- (void)headerRereshing
+{
+    self.aIndex = 140;
+    // 请求数据
+    [self getDataHead];
+    [self.tableView footerEndRefreshing];
+    
     
     
     
 }
-
+//上拉加载
+- (void)footerRereshing
+{
+    self.aIndex += 20 ;
+    if (self.aIndex < 400)
+    {
+        [self getDataHead];
+    }
+    else
+    {
+        [self.tableView footerEndRefreshing];
+    }
+    
+}
 
 
 - (void)didReceiveMemoryWarning
