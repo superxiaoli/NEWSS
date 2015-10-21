@@ -159,7 +159,7 @@
 
 
 }
-// 移动scrollview时候,让定时器停止
+// 移动scrollview时候,让定时器停止********************
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.timer invalidate];
