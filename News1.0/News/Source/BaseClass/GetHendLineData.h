@@ -21,14 +21,10 @@ typedef void (^adsValue)(NSArray *arr,NSArray *arr2);
 
 
 
-//<<<<<<< HEAD
+
 //// 这是测试gtihup***************gagagagagagagag
-//=======
+
 //// 这是测试gtihup再次测试
-
-
-
-
 
 @property (nonatomic,strong)NSMutableArray *dataArray;
 @property (nonatomic,strong)NSMutableArray *aArr;
