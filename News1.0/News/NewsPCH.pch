@@ -1,0 +1,22 @@
+//
+//  NewsPCH.pch
+//  News
+//
+//  Created by Xcord-LS on 15/10/15.
+//  Copyright (c) 2015年 李帅,赵良育,吴豪明. All rights reserved.
+//
+
+#ifndef News_NewsPCH_pch
+#define News_NewsPCH_pch
+
+#import "APPHeader.h"
+#import "IMPHeader.h"
+#import "KEYHeader.h"
+#import "URLHeader.h"
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DDA8FE23-9B18-449B-8EB9-DA98CB923042</string>
+	<key>IDESourceControlProjectName</key>
+	<string>News</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DD344DA90F21126F31918698B4D2BB45858B2ECB</key>
+		<string>https://github.com/superxiaoli/NEWS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>News1.0/News.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DD344DA90F21126F31918698B4D2BB45858B2ECB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/superxiaoli/NEWS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DD344DA90F21126F31918698B4D2BB45858B2ECB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD344DA90F21126F31918698B4D2BB45858B2ECB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NEWS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
