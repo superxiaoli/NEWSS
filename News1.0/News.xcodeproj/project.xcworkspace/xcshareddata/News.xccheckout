@@ -10,6 +10,8 @@
 	<string>News</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>A156487ED72E1DBBEECCBDB2AD5DA208515FD28C</key>
+		<string>https://github.com/superxiaoli/NEWSS.git</string>
 		<key>DD344DA90F21126F31918698B4D2BB45858B2ECB</key>
 		<string>https://github.com/superxiaoli/NEWS.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>News1.0/News.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DD344DA90F21126F31918698B4D2BB45858B2ECB</key>
+		<key>A156487ED72E1DBBEECCBDB2AD5DA208515FD28C</key>
 		<string>../../..</string>
+		<key>DD344DA90F21126F31918698B4D2BB45858B2ECB</key>
+		<string>../../../../NEWS</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/superxiaoli/NEWS.git</string>
+	<string>https://github.com/superxiaoli/NEWSS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DD344DA90F21126F31918698B4D2BB45858B2ECB</string>
+	<string>A156487ED72E1DBBEECCBDB2AD5DA208515FD28C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>DD344DA90F21126F31918698B4D2BB45858B2ECB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>NEWS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A156487ED72E1DBBEECCBDB2AD5DA208515FD28C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NEWSSSS</string>
 		</dict>
 	</array>
 </dict>
