@@ -14,9 +14,20 @@ typedef void (^adsValue)(NSArray *arr,NSArray *arr2);
 @interface GetHendLineData : NSObject
 // 在单例中创建一个属性,可以使这个数组在任何地方任何时间被访问
 
+
 //// 这是测试gtihup***************
 
 //// 这是测试gtihup
+
+
+
+//<<<<<<< HEAD
+//// 这是测试gtihup***************gagagagagagagag
+//=======
+//// 这是测试gtihup再次测试
+
+
+
 
 
 @property (nonatomic,strong)NSMutableArray *dataArray;
