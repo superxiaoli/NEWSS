@@ -15,7 +15,7 @@
 {
     if (_peImage == nil)
     {
-        self.peImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 80,80)];
+        self.peImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 100,70)];
         //self.picImageView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_peImage];
     }
@@ -27,7 +27,7 @@
 {
     if (_titleLable == nil)
     {
-        self.titleLable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.peImage.frame), CGRectGetMinY(self.peImage.frame), 250, 40)];
+        self.titleLable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.peImage.frame) + 5 , CGRectGetMinY(self.peImage.frame) - 10, 250, 40)];
         //self.songLable.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview:_titleLable];
     }
@@ -39,8 +39,8 @@
 {
     if (_degestLable == nil)
     {
-        self.degestLable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.peImage.frame), CGRectGetMinY(self.peImage.frame) + 25, 250, 40)];
-        self.degestLable.font = [UIFont systemFontOfSize:14];
+        self.degestLable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.peImage.frame) + 5, CGRectGetMinY(self.peImage.frame) + 25, 250, 40)];
+        self.degestLable.font = [UIFont systemFontOfSize:13];
         self.degestLable.numberOfLines = 0;
         //self.songLable.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview:_degestLable];
