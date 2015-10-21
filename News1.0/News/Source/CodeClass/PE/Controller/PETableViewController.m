@@ -15,15 +15,17 @@
 #import "PEPicViewController.h"
 #import "Pe1View.h"
 #import "PeHead1ViewController.h"
+#import "MJRefresh.h"
 @interface PETableViewController ()<UIScrollViewDelegate>
 
-@property (nonatomic,strong)NSArray *arr1;
+@property (nonatomic,strong)NSMutableArray *arr1;
 @property (nonatomic,strong)NSArray *arr2;
 @property (nonatomic,strong)NSArray *arr3;
 @property (nonatomic,strong)NSTimer *timer;
 @property (nonatomic,strong)UIView *view1;
 @property (nonatomic,strong)UILabel *lable;
 @property (nonatomic,strong)Pe1View *pV;
+@property (nonatomic,assign)NSInteger aindex;
 
 
 @end
@@ -40,22 +42,84 @@
     
    
     
-    self.arr1 = [NSArray array];
+   
     self.arr2 = [NSArray array];
     self.arr3 = [NSArray array];
-    [[GetPeData sharePeHandleData] getDataWithUrl:KPeURL PeValue:^(NSArray *arr1, NSArray *arr2,NSArray *arr3) {
-        
-        self.arr1 = arr1;
-        self.arr2 = arr2;
-        self.arr3 = arr3;
-        [self.tableView reloadData];
-    }];
     
+    [self getData];
     
     self.pV = [[Pe1View alloc]initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame),210)];
     
     [self setUpScrPage];
-     self.pV.PeScrollView.delegate = self;
+    self.pV.PeScrollView.delegate = self;
+    [self setupRefresh];
+    
+}
+-(void)getData
+{
+    [[GetPeData sharePeHandleData] getDataWithUrl:[NSString stringWithFormat:  @"http://c.3g.163.com/nc/article/list/T1348649079062/%ld-20.html",self.aindex ]PeValue:^(NSArray *arr1, NSArray *arr2,NSArray *arr3) {
+        if (self.aindex == 20)
+        {
+            self.arr1 = [NSMutableArray arrayWithArray:arr1];
+        }
+        else
+        {
+            for (PeModel *model in arr1)
+            {
+                [self.arr1 addObject:model];
+            }
+        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        self.arr2 = arr2;
+        self.arr3 = arr3;
+        [self.tableView reloadData];
+    }];
+}
+
+-(void)setupRefresh
+{
+    //下拉刷新
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
+    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    //一些设置
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.tableView.headerRefreshingText = @"刷新中。。。";
+    
+    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.tableView.footerRefreshingText = @"加载中。。。";
+}
+- (void)headerRereshing
+{
+    self.aindex = 20;
+    // 请求数据
+    [self getData];
+    
+    
+    
+    
+}
+//上拉加载
+- (void)footerRereshing
+{
+    self.aindex += 20 ;
+    if (self.aindex < 400)
+    {
+        [self getData];
+    }
+    else
+    {
+        [self.tableView footerEndRefreshing];
+    }
+    
 }
 
 
